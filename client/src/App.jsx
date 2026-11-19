@@ -25,9 +25,10 @@ function App() {
 
     try {
 
+      const API_BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:5000";
       await axios.post(
-        "http://localhost:5000/api/feedback",
-        feedback
+      `${API_BASE_URL}/api/feedback`,
+      feedback
       );
 
       alert("Feedback submitted successfully!");
